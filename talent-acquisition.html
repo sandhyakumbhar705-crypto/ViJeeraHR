@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talent Acquisition & Strategic Sourcing | VijeeraHR Academy</title>
+  <meta name="description" content="Develop a structured, data-informed recruitment capability covering sourcing strategy, screening, interviews, candidate experience and hiring metrics.">
+  
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --black: #000000;
+      --panel: #0d0d0d;
+      --panel-2: #141414;
+      --border: #222222;
+      --gold: #d9aa22;
+      --gold-light: #f1c83b;
+      --white: #f7f7f7;
+      --muted: #838890;
+    }
+
+    body {
+      background: var(--black) !important;
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    .text-gold { color: var(--gold-light) !important; }
+    .text-muted-custom { color: var(--muted) !important; }
+
+    /* ---------- NAVBAR ---------- */
+    .course-nav {
+      background: rgba(0,0,0,0.9) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border) !important;
+    }
+
+    .course-nav .nav-link {
+      color: #e0e0e0 !important;
+      font-weight: 500;
+    }
+
+    .course-nav .nav-link:hover, .course-nav .nav-link.active {
+      color: var(--gold-light) !important;
+    }
+
+    /* ---------- BUTTONS & BADGES ---------- */
+    .btn-gold {
+      color: #000 !important;
+      background: linear-gradient(180deg, #f2c93e, #dbaa20);
+      border: none;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(180deg, #ffe06a, #e6b82d);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-gold {
+      color: var(--gold-light) !important;
+      border: 1px solid var(--gold);
+      background: transparent;
+      border-radius: 8px;
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold-light);
+      color: #000 !important;
+    }
+
+    .badge-gold {
+      color: var(--gold-light) !important;
+      background: rgba(217, 170, 34, 0.1);
+      border: 1px solid rgba(217, 170, 34, 0.3);
+      border-radius: 6px;
+    }
+
+    /* ---------- MODERN CARDS ---------- */
+    .glass-card {
+      background: var(--panel) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: #383838 !important;
+      transform: translateY(-4px);
+    }
+
+    .feature-box {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .check-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #1a1a1a;
+      color: #c5c8ce;
+    }
+
+    .check-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-list i {
+      color: var(--gold-light);
+      margin-right: 10px;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero-section {
+      padding: 80px 0 60px;
+      background: radial-gradient(circle at top right, rgba(217, 170, 34, 0.05), transparent 40%);
+    }
+
+    footer {
+      background: #000;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="bg-black border-bottom border-secondary border-opacity-25 py-2 small">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span class="text-muted-custom"><i class="bi bi-award-fill text-gold me-1"></i> ISO 9001:2015 Certified HR Academy</span>
+      <span class="text-muted-custom"><i class="bi bi-envelope-fill text-gold me-1"></i> admissions@vijeerahr.com</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top course-nav py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="px-2 py-1 rounded-3 border border-warning text-gold fw-bold small">VHR</span>
+        <span class="fw-bold fs-4">Vijeera<span class="text-gold">HR</span></span>
+      </a>
+      <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active text-gold" href="#" data-bs-toggle="dropdown">Courses</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="courses.html">All Courses</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="talent-acquisition.html">Talent Acquisition</a></li>
+              <li><a class="dropdown-item" href="hr-analytics.html">HR Analytics</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html#why-us">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="index.html#auth-section" class="btn btn-outline-gold btn-sm px-3">Login</a>
+          <a href="index.html#auth-section" class="btn btn-gold btn-sm px-3">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Modern Split Hero -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge badge-gold px-3 py-2 mb-3"><i class="bi bi-shield-check me-1"></i> Certified Executive Program</span>
+            <h1 class="display-4 fw-bold mb-3">Talent Acquisition & Strategic Sourcing</h1>
+            <p class="lead text-muted-custom mb-4">Build a high-impact recruitment engine. Master advanced sourcing, candidate experience strategies, structured interview methods, and data-driven hiring metrics.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="index.html#auth-section" class="btn btn-gold btn-lg px-4 py-3">Enrol Now <i class="bi bi-arrow-right ms-2"></i></a>
+              <a href="courses.html" class="btn btn-outline-gold btn-lg px-4 py-3">Explore All Programs</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-5">
+            <div class="glass-card p-4">
+              <h4 class="fw-bold mb-4 text-gold"><i class="bi bi-lightning-charge me-2"></i> Quick Program Overview</h4>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="p-3 border border-secondary rounded-3 text-center">
+                    <small class="text-muted-custom d-block">Duration</small>
+                    <strong class="fs-5">6 Weeks</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 border border-secondary rounded-3 text-center">
+                    <small class="text-muted-custom d-block">Format</small>
+                    <strong class="fs-5">Live Online</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 border border-secondary rounded-3 text-center">
+                    <small class="text-muted-custom d-block">Skill Level</small>
+                    <strong class="fs-5">Intermediate</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 border border-secondary rounded-3 text-center">
+                    <small class="text-muted-custom d-block">Outcome</small>
+                    <strong class="fs-5 text-gold">Certification</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Column Grid Curriculum Section -->
+    <section class="py-5 border-top border-secondary border-opacity-25">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 650px;">
+          <span class="badge badge-gold mb-2">Curriculum</span>
+          <h2 class="display-6 fw-bold">6 Comprehensive Modules</h2>
+          <p class="text-muted-custom">Designed around real-world talent acquisition practice.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">01</span>
+              <h5 class="fw-bold mb-2">TA Strategy & Planning</h5>
+              <p class="text-muted-custom small mb-0">Align talent demand with company objectives and workforce requirements.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">02</span>
+              <h5 class="fw-bold mb-2">Sourcing & Boolean Search</h5>
+              <p class="text-muted-custom small mb-0">Master active sourcing, talent mapping, and advanced search strings.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">03</span>
+              <h5 class="fw-bold mb-2">Structured Interviews</h5>
+              <p class="text-muted-custom small mb-0">Build competency-based interviewing guidelines and screening tools.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">04</span>
+              <h5 class="fw-bold mb-2">Candidate Experience</h5>
+              <p class="text-muted-custom small mb-0">Optimize candidate touchpoints and build strong employer branding.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">05</span>
+              <h5 class="fw-bold mb-2">Offers & Onboarding</h5>
+              <p class="text-muted-custom small mb-0">Drive offer acceptance rates and seamlessly transition hires.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100">
+              <span class="text-gold fw-bold fs-4 d-block mb-2">06</span>
+              <h5 class="fw-bold mb-2">Recruitment Analytics</h5>
+              <p class="text-muted-custom small mb-0">Track cost-per-hire, time-to-fill, quality-of-hire, and ATS metrics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Dual Feature Cards -->
+    <section class="py-5 bg-black">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="feature-box h-100">
+              <h3 class="h4 fw-bold mb-3 text-gold"><i class="bi bi-check2-circle me-2"></i> Skills You Will Build</h3>
+              <ul class="check-list">
+                <li><i class="bi bi-check-circle-fill"></i> Boolean & X-ray Sourcing Strategies</li>
+                <li><i class="bi bi-check-circle-fill"></i> ATS Optimization & Pipeline Management</li>
+                <li><i class="bi bi-check-circle-fill"></i> Structured & Behavioral Interviewing</li>
+                <li><i class="bi bi-check-circle-fill"></i> Recruitment Dashboards & KPI Reporting</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="feature-box h-100">
+              <h3 class="h4 fw-bold mb-3 text-gold"><i class="bi bi-people me-2"></i> Who Should Join</h3>
+              <ul class="check-list">
+                <li><i class="bi bi-check-circle-fill"></i> Talent Acquisition Specialists & Recruiters</li>
+                <li><i class="bi bi-check-circle-fill"></i> HR Generalists transitioning to Sourcing roles</li>
+                <li><i class="bi bi-check-circle-fill"></i> Recruitment Coordinators & Agency Recruiters</li>
+                <li><i class="bi bi-check-circle-fill"></i> Early-career HR Practitioners</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Banner -->
+    <section class="py-5">
+      <div class="container">
+        <div class="glass-card p-5 text-center position-relative overflow-hidden">
+          <h2 class="display-6 fw-bold mb-3">Accelerate Your HR Career</h2>
+          <p class="text-muted-custom mx-auto mb-4" style="max-width: 600px;">Get full details on upcoming batch schedules, pricing, and curriculum highlights from our advisors.</p>
+          <a href="index.html#contact" class="btn btn-gold btn-lg px-5">Speak with an Advisor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-lg-4">
+          <h4 class="fw-bold">Vijeera<span class="text-gold">HR</span></h4>
+          <p class="text-muted-custom small">ISO 9001:2015 Accredited HR Academy dedicated to executive education and practical capability building.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled small text-muted-custom">
+            <li class="mb-2"><a href="courses.html" class="text-reset text-decoration-none">All Programs</a></li>
+            <li class="mb-2"><a href="talent-acquisition.html" class="text-reset text-decoration-none">Talent Acquisition</a></li>
+            <li><a href="hr-analytics.html" class="text-reset text-decoration-none">HR Analytics</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white">Contact</h6>
+          <p class="small text-muted-custom mb-2">admissions@vijeerahr.com</p>
+          <a href="index.html#contact" class="btn btn-outline-gold btn-sm">Get Info</a>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 mt-4 pt-4 text-muted-custom small">
+        © 2026 VijeeraHR Academy. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

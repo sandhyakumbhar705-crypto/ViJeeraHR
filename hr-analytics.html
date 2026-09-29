@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HR Analytics & People Metrics | VijeeraHR Academy</title>
+  <meta name="description" content="Turn HR data into useful management insights through people metrics, dashboards, reporting frameworks and practical analytical thinking.">
+  
+  <!-- CDN Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* =========================================================
+       VIJEERA HR - MODERNIZED PREMIUM BLACK & GOLD THEME
+       ========================================================= */
+
+    :root {
+      --black: #050505;
+      --panel: #0d0d0d;
+      --panel-hover: #141414;
+      --border: #222222;
+      --border-gold: rgba(217, 170, 34, 0.35);
+
+      --gold: #d9aa22;
+      --gold-light: #f1c83b;
+      --gold-glow: rgba(241, 200, 59, 0.15);
+
+      --white: #f7f7f7;
+      --text: #d6d6d6;
+      --muted: #888d96;
+    }
+
+    /* ---------- GLOBAL ---------- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--black) !important;
+      color: var(--white);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.65;
+    }
+
+    main, section {
+      background: var(--black);
+    }
+
+    a {
+      transition: all 0.25s ease;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4, h5, h6 {
+      color: #f5f5f5;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { line-height: 1.1; }
+    h2 { line-height: 1.18; }
+
+    p { color: var(--muted); }
+
+    .text-secondary { color: var(--muted) !important; }
+    .text-gold { color: var(--gold-light) !important; }
+
+    /* ---------- TOP BAR ---------- */
+    .top-bar {
+      background: #000 !important;
+      border-bottom: 1px solid #1a1a1a;
+      font-size: 0.8rem;
+    }
+
+    /* ---------- NEW NAVBAR ---------- */
+    .course-nav {
+      min-height: 80px;
+      background: rgba(10, 10, 10, 0.85) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .course-nav .navbar-brand {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-logo-badge {
+      background: linear-gradient(135deg, rgba(217, 170, 34, 0.2), rgba(0, 0, 0, 0.8));
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 12px rgba(217, 170, 34, 0.2);
+    }
+
+    .brand-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      font-family: Arial, sans-serif;
+      color: var(--gold-light) !important;
+      letter-spacing: 0.12em;
+      font-size: 0.55rem;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .course-nav .nav-link {
+      color: #cccccc !important;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.6rem 1.1rem !important;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .course-nav .nav-link:hover {
+      color: var(--gold-light) !important;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .course-nav .nav-link.active {
+      color: var(--gold-light) !important;
+      font-weight: 600;
+    }
+
+    .course-nav .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: var(--gold-light);
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--gold-light);
+    }
+
+    .course-nav .navbar-toggler {
+      border: 1px solid #333;
+      padding: 6px 10px;
+    }
+
+    .course-nav .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.2rem var(--gold-glow);
+    }
+
+    .course-nav .dropdown-menu {
+      min-width: 260px;
+      padding: 0.6rem;
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .course-nav .dropdown-item {
+      color: #cccccc;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .course-nav .dropdown-item:hover,
+    .course-nav .dropdown-item:focus {
+      color: #ffffff;
+      background: linear-gradient(90deg, rgba(217, 170, 34, 0.15), transparent);
+      transform: translateX(4px);
+    }
+
+    .course-nav .dropdown-divider { border-color: #222; }
+
+    /* ---------- BUTTONS ---------- */
+    .btn-gold {
+      color: #000000 !important;
+      background: linear-gradient(180deg, #f2c93e, #dbaa20);
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(217, 170, 34, 0.25);
+    }
+
+    .btn-gold:hover {
+      color: #000000 !important;
+      background: linear-gradient(180deg, #ffe06a, #e6b82d);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(217, 170, 34, 0.4);
+    }
+
+    .btn-outline-gold {
+      color: var(--gold-light) !important;
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .btn-outline-gold:hover {
+      color: #000 !important;
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- BADGES ---------- */
+    .badge-gold {
+      display: inline-flex;
+      align-items: center;
+      color: var(--gold-light) !important;
+      background: rgba(217, 170, 34, 0.08);
+      border: 1px solid rgba(217, 170, 34, 0.3);
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+      background: radial-gradient(circle at 80% 20%, rgba(217, 170, 34, 0.05) 0%, transparent 50%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      color: #ffffff;
+    }
+
+    .hero .lead {
+      max-width: 720px;
+      color: var(--muted) !important;
+      font-size: 1.15rem;
+    }
+
+    /* ---------- CARDS ---------- */
+    .info-card, .module-card, .cta-card {
+      background: var(--panel) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .info-card {
+      padding: 28px;
+      height: 100%;
+    }
+
+    .info-card:hover, .module-card:hover {
+      border-color: var(--border-gold) !important;
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .module-card {
+      padding: 26px;
+      height: 100%;
+    }
+
+    .module-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      background: rgba(217, 170, 34, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .course-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      background: rgba(217, 170, 34, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      font-size: 26px;
+    }
+
+    /* ---------- LISTS ---------- */
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .check-list li {
+      padding: 0.75rem 0;
+      color: #c5c8cf;
+      border-bottom: 1px solid #141414;
+      display: flex;
+      align-items: center;
+    }
+
+    .check-list li:last-child { border-bottom: 0; }
+
+    .check-list i {
+      color: var(--gold-light);
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta-card {
+      padding: 60px 30px !important;
+      background: linear-gradient(135deg, #0d0d0d 0%, #15130c 100%) !important;
+      border: 1px solid var(--border-gold) !important;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #000000 !important;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    footer h4, footer h5, footer h6 { color: #f2f2f2; }
+    footer .text-secondary { color: var(--muted) !important; }
+    footer a:hover { color: var(--gold-light) !important; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 991px) {
+      .course-nav .navbar-collapse {
+        background: #0d0d0d;
+        border: 1px solid #222;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 12px;
+      }
+      .course-nav .nav-link.active::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar py-2 text-secondary">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div><i class="bi bi-award-fill text-gold me-1"></i> ISO 9001:2015 Certified HR Academy</div>
+      <div><i class="bi bi-envelope-fill text-gold me-1"></i> admissions@vijeerahr.com</div>
+    </div>
+  </div>
+
+  <!-- Modern Header / Navbar -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark course-nav">
+      <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+          <span class="brand-logo-badge">VHR</span>
+          <div class="d-flex flex-column">
+            <span class="brand-title">Vijeera<span class="text-gold">HR</span></span>
+            <span class="brand-subtitle text-uppercase">Professional HR Academy</span>
+          </div>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links & Actions -->
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav mx-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+              <ul class="dropdown-menu shadow-lg">
+                <li><a class="dropdown-item" href="courses.html">View All HR Courses</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="hr-generalist.html">HR Generalist Masterclass</a></li>
+                <li><a class="dropdown-item" href="talent-acquisition.html">Talent Acquisition &amp; Sourcing</a></li>
+                <li><a class="dropdown-item" href="payroll-compliance.html">Payroll &amp; Statutory Compliance</a></li>
+                <li><a class="dropdown-item text-gold" href="hr-analytics.html">HR Analytics &amp; People Metrics</a></li>
+                <li><a class="dropdown-item" href="strategic-hrbp.html">Strategic HR Business Partnering</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html#why-us">Why Vijeera</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#verify">Verify Certificate</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+            <a href="index.html#auth-section" class="btn btn-outline-gold btn-sm px-3">Login</a>
+            <a href="index.html#auth-section" class="btn btn-gold btn-sm px-3">Register</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-8">
+            <span class="badge badge-gold mb-3"><i class="bi bi-award-fill me-1"></i> ISO 9001:2015 Accredited Program</span>
+            <div class="course-icon mb-4"><i class="bi bi-bar-chart-line-fill"></i></div>
+            <div class="text-gold fw-semibold small text-uppercase mb-2">HR Analytics &amp; AI</div>
+            <h1 class="fw-bold mb-3">HR Analytics &amp; People Metrics</h1>
+            <p class="lead mb-4">Turn HR data into useful management insights through people metrics, dashboards, reporting frameworks, and practical analytical thinking.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="index.html#auth-section" class="btn btn-gold btn-lg px-4 fs-6">Enrol / Enquire Now <i class="bi bi-arrow-right ms-2"></i></a>
+              <a href="courses.html" class="btn btn-outline-gold btn-lg px-4 fs-6">View All Courses</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info-card">
+              <h5 class="fw-bold mb-4">Program Snapshot</h5>
+              <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 py-3">
+                <span class="text-secondary">Duration</span><strong>6 Weeks</strong>
+              </div>
+              <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 py-3">
+                <span class="text-secondary">Format</span><strong>Live + Hands-on</strong>
+              </div>
+              <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 py-3">
+                <span class="text-secondary">Level</span><strong>Intermediate</strong>
+              </div>
+              <div class="d-flex justify-content-between py-3">
+                <span class="text-secondary">Credential</span><strong class="text-gold">Certificate</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Curriculum Section -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="section-title mb-5">
+          <span class="badge badge-gold mb-2">Program Curriculum</span>
+          <h2 class="display-6 fw-bold">What You Will Learn</h2>
+          <p class="text-secondary">A structured, practical curriculum designed around workplace application rather than theory alone.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">1</div>
+              <h5 class="fw-bold">HR data foundations and data quality</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">2</div>
+              <h5 class="fw-bold">Workforce and headcount metrics</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">3</div>
+              <h5 class="fw-bold">Recruitment, retention and attrition analytics</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">4</div>
+              <h5 class="fw-bold">Performance and engagement metrics</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">5</div>
+              <h5 class="fw-bold">Dashboard design and management reporting</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="module-card">
+              <div class="module-number mb-3">6</div>
+              <h5 class="fw-bold">AI-assisted HR workflows and responsible use of AI</h5>
+              <p class="text-secondary small mb-0">Practical concepts, examples, exercises and guided application relevant to this program.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="py-5 bg-black border-top border-bottom border-secondary border-opacity-25">
+      <div class="container py-4">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <span class="badge badge-gold mb-2">Learning Outcomes</span>
+            <h2 class="h2 fw-bold mb-4">Skills You Will Build</h2>
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill"></i>HR KPIs &amp; metrics</li>
+              <li><i class="bi bi-check-circle-fill"></i>Excel-based analysis</li>
+              <li><i class="bi bi-check-circle-fill"></i>Dashboard thinking</li>
+              <li><i class="bi bi-check-circle-fill"></i>Attrition analysis</li>
+              <li><i class="bi bi-check-circle-fill"></i>Recruitment analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i>AI-assisted HR workflows</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <span class="badge badge-gold mb-2">Who Should Join?</span>
+            <h2 class="h2 fw-bold mb-4">Ideal For</h2>
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill"></i>HR professionals moving toward analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i>HRBP and people operations teams</li>
+              <li><i class="bi bi-check-circle-fill"></i>HR managers needing stronger reporting</li>
+              <li><i class="bi bi-check-circle-fill"></i>Professionals interested in data-driven HR</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="section-title mb-4">
+          <span class="badge badge-gold mb-2">Learning Experience</span>
+          <h2 class="h2 fw-bold">Why This Program Works</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="info-card">
+              <i class="bi bi-briefcase-fill fs-3 text-gold"></i>
+              <h5 class="mt-3">Workplace Focus</h5>
+              <p class="text-secondary small mb-0">Connect concepts with realistic HR workflows, documentation and business scenarios.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-card">
+              <i class="bi bi-person-workspace fs-3 text-gold"></i>
+              <h5 class="mt-3">Practical Guidance</h5>
+              <p class="text-secondary small mb-0">Build confidence through exercises, examples, case discussions and guided application.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-card">
+              <i class="bi bi-award-fill fs-3 text-gold"></i>
+              <h5 class="mt-3">Certification</h5>
+              <p class="text-secondary small mb-0">Complete the program requirements and receive the <strong class="text-white">Certificate in HR Analytics &amp; People Metrics</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+      <div class="container my-3">
+        <div class="cta-card text-center">
+          <span class="badge badge-gold mb-3">Start Your HR Growth Journey</span>
+          <h2 class="display-6 fw-bold">Ready to build practical HR expertise?</h2>
+          <p class="text-secondary mx-auto mb-4" style="max-width:650px">Talk to an admission advisor about the curriculum, upcoming batches, learning format and enrollment process.</p>
+          <a href="index.html#contact" class="btn btn-gold btn-lg px-5">Talk to an HR Expert</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h4 class="fw-bold">Vijeera<span class="text-gold">HR</span></h4>
+          <p class="text-secondary small">ISO 9001:2015 Certified HR Academy focused on practical HR capability building, leadership development and career transformation.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white">Course Categories</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="hr-generalist.html">HR Generalist</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="talent-acquisition.html">Talent Acquisition</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="payroll-compliance.html">Payroll &amp; Compliance</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="hr-analytics.html">HR Analytics</a></li>
+            <li><a class="text-secondary text-decoration-none" href="strategic-hrbp.html">Strategic HRBP</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-white">Need Guidance?</h6>
+          <p class="text-secondary small">Speak with an admission advisor about the right program, batch schedule and enrollment process.</p>
+          <a href="index.html#contact" class="btn btn-gold btn-sm">Talk to an HR Expert</a>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 mt-4 pt-4 text-secondary small">
+        &copy; 2026 VijeeraHR Professional HR Academy. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
